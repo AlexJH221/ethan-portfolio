@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tennessee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dzf1ffg.css">
+</head>
+<body>
+  <div id="container">
+    <div id="content">
+      <button id="mobile-nav-toggle">&#9776;</button>
+      <div id="navbar-placeholder"></div>
+      <div id="gallery">
+    <h1 class="title">Tennessee</h1>
+    <div id="photo-grid">
+      <img class="slides" src="./images/Texas/ECR02750-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR02823-2-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR02914-3-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR02988-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <div id="slideshow">
+        <span class="close" onclick="closeSlideshow()">&times;</span>
+        <div class="slide-container" onclick="prevSlide()">
+          <button class="slide-btn">&#10094;</button>
+        </div>
+        <img id="slideshow-content">
+        <div class="slide-container" onclick="nextSlide()">
+          <button class="slide-btn">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+if (window.innerWidth > 700) {
+  const slides = document.getElementsByClassName("slides");
+  const slideshow = document.getElementById("slideshow");
+  const content = document.getElementById("slideshow-content");
+  let slideIndex = 0;
+  console.log(slideshow);
+
+  function openSlideshow(e) {
+    console.log(e);
+    slideshow.style.display = "flex";
+    content.src = e.src;
+    slideIndex =  Array.from(slides).indexOf(e);
+    if (e.id == 1) {
+      console.log("First in slideshow");
+    } else if (e.id == slides.length) {
+      console.log("Last in slideshow");
+    }
+  }
+
+  function closeSlideshow() {
+    slideshow.style.display = "none";
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    content.src = slides[slideIndex].src;
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    content.src = slides[slideIndex].src;
+  }
+}
+</script>
+<script src="/scripts/main.js"></script>
+</body>
+</html>

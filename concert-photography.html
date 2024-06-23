@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concert Photography</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dzf1ffg.css">
+</head>
+<body>
+  <div id="photography-container">
+    <div style="margin: 1em 0 0 1em">
+      <a class="home-link" href="./index.html">BACK TO HOME</a>
+    </div>
+    <h1 style="text-align: center;">CONCERT PHOTOGRAPHY</h1>
+    <div id="photo-grid">
+      <img  class="photo" src="./images/Concert Photography/IMG_0004-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0009-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0002-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0030-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0085-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0090-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0111-min.jpg" alt="Concert Photography*">
+      <img  class="photo" src="./images/Concert Photography/IMG_0119-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_0127-min.jpg" alt="Concert Photography**">
+      <img  class="photo" src="./images/Concert Photography/IMG_0136-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9807-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9822-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9825-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9827-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9923-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9945-min.jpg" alt="Concert Photography">
+      <img  class="photo" src="./images/Concert Photography/IMG_9961-min.jpg" alt="Concert Photography">
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+      </div>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("myModal");
+    const images = document.getElementsByClassName("photo");
+    const modalImg = document.getElementById("modalImg");
+    Object.entries(images).forEach(([key, image]) => {
+      console.log(image);
+      image.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = image.src;
+      }
+    })
+    console.log(images);
+    const span = document.getElementsByClassName("close")[0];
+    console.log(span);
+    span.onclick = () => {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>

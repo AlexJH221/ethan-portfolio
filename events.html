@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Photography</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dzf1ffg.css">
+</head>
+<body>
+  <div id="photography-container">
+    <div style="margin: 1em 0 0 1em">
+      <a class="home-link" href="./index.html">BACK TO HOME</a>
+    </div>
+    <h1 style="text-align: center;">EVENTS</h1>
+    <div id="photo-grid">
+      <img  class="photo" src="./images/Events-1/ECR00398-min.jpg" alt="Events Photography**">
+      <img  class="photo" src="./images/Events-1/ECR00422-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR00431-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR00461-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR00473-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR00490-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01397-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01398-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01429-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01482-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01572-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01613-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01625-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR01712-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR03116-min.jpg" alt="Events Photography*">
+      <img  class="photo" src="./images/Events-1/ECR03169-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR03212-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR03224-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR03251-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR05130-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR05174-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR05220-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR05262-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR05265-min.jpg" alt="Events Photography">
+      <img  class="photo" src="./images/Events-1/ECR05275-min.jpg" alt="Events Photography">
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+      </div>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("myModal");
+    const images = document.getElementsByClassName("photo");
+    const modalImg = document.getElementById("modalImg");
+    Object.entries(images).forEach(([key, image]) => {
+      console.log(image);
+      image.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = image.src;
+      }
+    })
+    console.log(images);
+    const span = document.getElementsByClassName("close")[0];
+    console.log(span);
+    span.onclick = () => {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>

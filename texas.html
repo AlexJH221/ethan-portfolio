@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dzf1ffg.css">
+</head>
+<body>
+  <div id="container">
+    <div id="content">
+      <button id="mobile-nav-toggle">&#9776;</button>
+      <div id="navbar-placeholder"></div>
+      <div id="gallery">
+    <h1 class="title">Austin, Texas</h1>
+    <div id="photo-grid">
+      <img class="slides" src="./images/Texas/ECR01586-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00675-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00684-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00766-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00889-2-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00899-Enhanced-NR-min 3.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00936-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR00947-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR01116-Enhanced-NR-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR01262-Enhanced-NR-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR01268-Enhanced-NR-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR01472-5-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR02666-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR01586-min 2.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR03751-min 2.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <img class="slides" src="./images/Texas/ECR03791-min 1.jpg" onclick="openSlideshow(this)" alt="Ava">
+      <div id="slideshow">
+        <span class="close" onclick="closeSlideshow()">&times;</span>
+        <div class="slide-container" onclick="prevSlide()">
+          <button class="slide-btn">&#10094;</button>
+        </div>
+        <img id="slideshow-content">
+        <div class="slide-container" onclick="nextSlide()">
+          <button class="slide-btn">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+if (window.innerWidth > 700) {
+  const slides = document.getElementsByClassName("slides");
+  const slideshow = document.getElementById("slideshow");
+  const content = document.getElementById("slideshow-content");
+  let slideIndex = 0;
+  console.log(slideshow);
+
+  function openSlideshow(e) {
+    console.log(e);
+    slideshow.style.display = "flex";
+    content.src = e.src;
+    slideIndex =  Array.from(slides).indexOf(e);
+    if (e.id == 1) {
+      console.log("First in slideshow");
+    } else if (e.id == slides.length) {
+      console.log("Last in slideshow");
+    }
+  }
+
+  function closeSlideshow() {
+    slideshow.style.display = "none";
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    content.src = slides[slideIndex].src;
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    content.src = slides[slideIndex].src;
+  }
+}
+</script>
+<script src="/scripts/main.js"></script>
+</body>
+</html>

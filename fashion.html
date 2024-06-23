@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Photography</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dzf1ffg.css">
+</head>
+<body>
+  <div id="photography-container">
+    <div style="margin: 1em 0 0 1em">
+      <a class="home-link" href="./index.html">BACK TO HOME</a>
+    </div>
+    <h1 style="text-align: center;">FASHION</h1>
+    <div></div>
+    <div id="photo-grid">
+      <img  class="photo" src="./images/Fashion-1/danapick1-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/danapick2-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/danapick3-min.jpg" alt="Fashion Photography*">
+      <img  class="photo" src="./images/Fashion-1/danapick4-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR00036-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR00064-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR00219-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR00321-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR01819-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR01832-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR02059-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR02080-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR02335-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR05341-Enhanced-NR-min.jpg" alt="Fashion Photography**">
+      <img  class="photo" src="./images/Fashion-1/ECR05388-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR05451-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR05528-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR07565-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR07641-Enhanced-NR-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR07698-Enhanced-NR-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR07837-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/ECR09995-min.jpg" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/SAFARI PIC 1-min.png" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/SAFARI PIC 15-min.png" alt="Fashion Photography">
+      <img  class="photo" src="./images/Fashion-1/SAFARI PIC 5-min.png" alt="Fashion Photography">
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+      </div>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("myModal");
+    const images = document.getElementsByClassName("photo");
+    const modalImg = document.getElementById("modalImg");
+    Object.entries(images).forEach(([key, image]) => {
+      console.log(image);
+      image.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = image.src;
+      }
+    })
+    console.log(images);
+    const span = document.getElementsByClassName("close")[0];
+    console.log(span);
+    span.onclick = () => {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
